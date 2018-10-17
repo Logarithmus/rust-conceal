@@ -74,11 +74,11 @@ syntax match rustOperator ">=" conceal cchar=≥
 " syntax match rustOperator "->" conceal cchar=→
 " syntax match rustOperator "=>" conceal cchar=⇒
 
-syntax match rustRightArrowHead contained ">" conceal cchar= 
+syntax match rustRightArrowHead contained ">" conceal cchar= 
 syntax match rustRightArrowTail contained "-" conceal cchar=→
 syntax match rustOperator "->" contains=rustRightArrowHead,rustRightArrowTail
 
-syntax match rustFatRightArrowHead contained ">" conceal cchar= 
+syntax match rustFatRightArrowHead contained ">" conceal cchar= 
 syntax match rustFatRightArrowTail contained "=" conceal cchar=⇒
 syntax match rustOperator "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
 
