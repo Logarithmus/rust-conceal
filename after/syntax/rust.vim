@@ -1,6 +1,7 @@
 " Remove the keywords. We'll re-add them below. Use silent in case the group
 " doesn't exist.
 silent! syntax clear rustOperator
+silent! syntax clear rustRepeat
 
 " syntax match rustOperator "::" conceal cchar=⦂
 " Raised dot for static members
@@ -169,9 +170,9 @@ syntax keyword rustKeyword else conceal cchar=▪
 syntax keyword rustConstant true conceal cchar=⊤
 syntax keyword rustConstant false conceal cchar=⊥
 " TODO conceal only on lines that don't contain `impl` using \zs and \ze
+syntax match rustKeyword '^\%(.*impl\)\@!.*\zsfor' conceal cchar=∀
 " syntax keyword rustKeyword for conceal cchar=∀
 " syntax match rustKeyword '\v(impl .+)@! \zsfor\ze' conceal cchar=∀
-syntax match rustKeyword '^\%(.*impl\)\@!.*\zsfor' conceal cchar=∀
 syntax keyword rustKeyword while conceal cchar=⥁
 syntax keyword rustKeyword loop conceal cchar=∞
 syntax keyword rustKeyword unsafe conceal cchar=☡
