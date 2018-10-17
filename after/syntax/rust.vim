@@ -3,7 +3,6 @@
 silent! syntax clear rustOperator
 silent! syntax clear rustRepeat
 
-" syntax match rustOperator "::" conceal cchar=⦂
 " Raised dot for static members
 syntax match rustOperator "::" conceal cchar=°
 
@@ -62,11 +61,13 @@ syntax match Normal '\v[^_]\zs_[nN]\ze>' conceal cchar=ₙ
 syntax match Normal '\v[^_]\zs_[mM]\ze>' conceal cchar=ₘ
 syntax match Normal '\v[^_]\zs_[tT]\ze>' conceal cchar=ₜ
 
-
 syntax match rustOperator '<<' conceal cchar=≺
 syntax match rustOperator '>>' conceal cchar=≻
-
 syntax match rustOperator '\^' conceal cchar=⊕
+syntax match rustOperator '\v\.\.\=' conceal cchar=…
+syntax match rustOperator '&&' conceal cchar=∧
+" Space is required to distinguish this from empty closure
+syntax match rustOperator '[^=,] \zs||\ze ' conceal cchar=∨
 
 syntax match rustOperator "<=" conceal cchar=≤
 syntax match rustOperator ">=" conceal cchar=≥
@@ -103,17 +104,10 @@ syntax match rustOperator '\s\*\s'ms=s+1,me=e-1 conceal cchar=∙
 " TODO conceal map operator
 " TODO conceal that awful arrow typeclass notation with idiom brackets
 
-"Most specific goes last since conceal run top to bottom
+" Most specific goes last since conceal run top to bottom
 syntax match rustOperator '\v\.iter\(\)' conceal cchar=↑
 syntax match rustOperator '\v\.enumerate\(\)' conceal cchar=⇡
 syntax match rustOperator '\v\.iter\(\)\.enumerate\(\)' conceal cchar=⇡
-
-
-syntax match rustOperator '\v\.\.\=' conceal cchar=…
-syntax match rustOperator '&&' conceal cchar=∧
-" Space is required to distinguish this from empty closure
-syntax match rustOperator '[^=,] \zs||\ze ' conceal cchar=∨
-
 
 syntax keyword rustKeyword alpha ALPHA conceal cchar=α
 syntax keyword rustKeyword beta BETA conceal cchar=β
