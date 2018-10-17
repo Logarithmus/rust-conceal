@@ -142,7 +142,7 @@ syntax keyword rustKeyword nabla NABLA conceal cchar=∇
 
 " like APL
 syntax keyword rustOperator in conceal cchar=∈
-syntax keyword rustOperator pub conceal cchar=“
+syntax match rustOperator '\v<pub ' conceal cchar=“
 "traits and their impls are sections of a paragraph
 syntax keyword rustOperator impl conceal cchar=※
 syntax keyword rustOperator struct conceal cchar=✕
