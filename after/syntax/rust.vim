@@ -75,13 +75,13 @@ syntax match rustOperator ">=" conceal cchar=≥
 " syntax match rustOperator "->" conceal cchar=→
 " syntax match rustOperator "=>" conceal cchar=⇒
 
-syntax match rustRightArrowHead contained ">" conceal cchar= 
-syntax match rustRightArrowTail contained "-" conceal cchar=→
-syntax match rustOperator "->" contains=rustRightArrowHead,rustRightArrowTail
+syn match rustRightArrowHead contained ">" conceal cchar= 
+syn match rustRightArrowTail contained "-" conceal cchar=→
+syn match rustNiceOperator "->" contains=rustRightArrowHead,rustRightArrowTail
 
-syntax match rustFatRightArrowHead contained ">" conceal cchar= 
-syntax match rustFatRightArrowTail contained "=" conceal cchar=⇒
-syntax match rustOperator "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
+syn match rustFatRightArrowHead contained ">" conceal cchar= 
+syn match rustFatRightArrowTail contained "=" conceal cchar=⇒
+syn match rustNiceOperator "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
 
 syntax match rustOperator '\<\@!_\(_*\>\)\@=' conceal cchar=′
 
@@ -142,7 +142,9 @@ syntax keyword rustKeyword nabla NABLA conceal cchar=∇
 
 " like APL
 syntax keyword rustOperator in conceal cchar=∈
-syntax match rustOperator '\v<pub ' conceal cchar=“
+" we don't use syn keyword in order to swallow the space after.
+" syntax match rustOperator '\v<pub ' conceal cchar=“
+syntax match rustNiceOperator '\v<pub ' conceal cchar=“
 "traits and their impls are sections of a paragraph
 syntax keyword rustOperator impl conceal cchar=※
 syntax keyword rustOperator struct conceal cchar=✕
@@ -189,6 +191,7 @@ syntax keyword rustType u64 conceal cchar=ℕ
 syntax keyword rustType usize conceal cchar=ℕ
 
 highlight! link rustBuiltin rustOperator
+highlight! link rustNiceOperator rustOperator
 highlight! link rustOperator Operator
 highlight! link rustStatement Statement
 highlight! link rustKeyword Keyword
