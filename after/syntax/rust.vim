@@ -76,13 +76,13 @@ syntax match rustOperator ">=" conceal cchar=≥
 " syntax match rustOperator "->" conceal cchar=→
 " syntax match rustOperator "=>" conceal cchar=⇒
 
-syn match rustRightArrowHead contained ">" conceal cchar= 
+syn match rustRightArrowHead contained ">" conceal
 syn match rustRightArrowTail contained "-" conceal cchar=→
-syn match rustNiceOperator "->" contains=rustRightArrowHead,rustRightArrowTail
+syn match rustOperator "->" contains=rustRightArrowHead,rustRightArrowTail
 
-syn match rustFatRightArrowHead contained ">" conceal cchar= 
+syn match rustFatRightArrowHead contained ">" conceal
 syn match rustFatRightArrowTail contained "=" conceal cchar=⇒
-syn match rustNiceOperator "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
+syn match rustOperator "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
 
 syntax match rustOperator '\<\@!_\(_*\>\)\@=' conceal cchar=′
 
@@ -145,7 +145,7 @@ syntax keyword rustKeyword nabla NABLA conceal cchar=∇
 syntax keyword rustOperator in conceal cchar=∈
 " we don't use syn keyword in order to swallow the space after.
 " syntax match rustOperator '\v<pub ' conceal cchar=“
-syntax match rustNiceOperator '\v<pub ' conceal cchar=“
+syntax match rustOperator '\v<pub ' conceal cchar=“
 "traits and their impls are sections of a paragraph
 syntax keyword rustOperator impl conceal cchar=※
 syntax keyword rustOperator struct conceal cchar=✕
@@ -196,9 +196,9 @@ syntax match rustType '\v\&(str|String)' conceal cchar=𝐒
 
 syntax keyword rustType Vec conceal cchar=𝕍
 syntax match rustType '\v\zsvec!\ze\[' conceal cchar=𝕍
+syntax keyword rustKeyword where conceal cchar=∵
 
 highlight! link rustBuiltin rustOperator
-highlight! link rustNiceOperator rustOperator
 highlight! link rustOperator Operator
 highlight! link rustStatement Statement
 highlight! link rustKeyword Keyword
