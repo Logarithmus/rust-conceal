@@ -102,13 +102,13 @@ syntax match rustOperator '\( \|\)\*\*\( \|\)n\>' conceal cchar=ⁿ
 " only conceals when theres one space on each side of the star, making it
 " unambiguous with pointer dereferencing
 syntax match rustOperator '\s\*\s'ms=s+1,me=e-1 conceal cchar=∙
-" TODO conceal map operator
-" TODO conceal that awful arrow typeclass notation with idiom brackets
 
 " Most specific goes last since conceal run top to bottom
 syntax match rustOperator '\v\.iter\(\)' conceal cchar=↑
 syntax match rustOperator '\v\.enumerate\(\)' conceal cchar=⇡
 syntax match rustOperator '\v\.iter\(\)\.enumerate\(\)' conceal cchar=⇡
+
+" TODO String::from_string
 
 syntax keyword rustKeyword alpha ALPHA conceal cchar=α
 syntax keyword rustKeyword beta BETA conceal cchar=β
