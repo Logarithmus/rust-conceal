@@ -5,6 +5,7 @@ silent! syntax clear rustRepeat
 
 " Raised dot for static members
 syntax match rustOperator "::" conceal cchar=°
+syntax match rustOperator '\v<Box(::)?(new)?' conceal cchar=□
 
 " I want the semicolons to fade into the background.
 " syntax match rustOperator ';' conceal cchar=𐤟
