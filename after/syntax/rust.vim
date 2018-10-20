@@ -167,7 +167,7 @@ syntax keyword rustKeyword else conceal cchar=▪
 syntax keyword rustConstant true conceal cchar=⊤
 syntax keyword rustConstant false conceal cchar=⊥
 " TODO conceal only on lines that don't contain `impl` using \zs and \ze
-syntax match rustKeyword '^\%(.*impl\)\@!.*\zsfor' conceal cchar=∀
+syntax match rustKeyword '^\%(.*impl\)\@!.*\zs\<for\>' conceal cchar=∀
 " syntax keyword rustKeyword for conceal cchar=∀
 " syntax match rustKeyword '\v(impl .+)@! \zsfor\ze' conceal cchar=∀
 syntax keyword rustKeyword while conceal cchar=⥁
