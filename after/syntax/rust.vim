@@ -110,6 +110,7 @@ syntax match rustOperator '\v\.enumerate\(\)' conceal cchar=⇡
 syntax match rustOperator '\v\.iter\(\)\.enumerate\(\)' conceal cchar=⇡
 
 " TODO String::from_string
+" TODO .map .filter .fold .collect
 
 syntax keyword rustKeyword alpha ALPHA conceal cchar=α
 syntax keyword rustKeyword beta BETA conceal cchar=β
@@ -167,7 +168,6 @@ syntax match rustKeyword 'else if' conceal cchar=▹
 syntax keyword rustKeyword else conceal cchar=▪
 syntax keyword rustConstant true conceal cchar=⊤
 syntax keyword rustConstant false conceal cchar=⊥
-" TODO conceal only on lines that don't contain `impl` using \zs and \ze
 syntax match rustKeyword '^\%(.*impl\)\@!.*\zs\<for\>' conceal cchar=∀
 " syntax keyword rustKeyword for conceal cchar=∀
 " syntax match rustKeyword '\v(impl .+)@! \zsfor\ze' conceal cchar=∀
