@@ -195,9 +195,8 @@ syntax keyword rustType usize conceal cchar=ℕ
 syntax keyword rustType str String conceal cchar=𝐒
 syntax match rustType '\v\&(str|String)' conceal cchar=𝐒
 
-syntax match rustOperator '\v<Vec(::)?(new)?' conceal cchar=𝕍
-
 syntax match rustType '\v\zsvec!\ze\[' conceal
+syntax match rustType '\v<Vec(::)?(new)?' conceal cchar=𝕍
 syntax keyword rustKeyword where conceal cchar=∵
 
 highlight! link rustBuiltin rustOperator
