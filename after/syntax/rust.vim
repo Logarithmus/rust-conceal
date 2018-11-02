@@ -17,6 +17,9 @@ syntax match rustOperator '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
 " syntax match rustOperator '\v(\{ ?)|(\} ?)' conceal cchar=♢
 syntax match rustOperator '\v(\{ ?)|(\} ?)' conceal
 
+" Conceal underscores in numeric literals with commas
+syntax match Constant '\v<\d+\zs_\ze\d+>' conceal cchar=,
+
 " Matches x0 -> x₀ A2 -> A₂ word2 -> word₂
 " Use ms=s+1 to avoid concealing the letter before the number
 
