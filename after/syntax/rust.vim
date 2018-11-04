@@ -17,8 +17,8 @@ syntax match rustOperator '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
 " syntax match rustOperator '\v(\{ ?)|(\} ?)' conceal cchar=♢
 syntax match rustOperator '\v(\{ ?)|(\} ?)' conceal
 
-" Conceal underscores in numeric literals with commas
-syntax match Constant '\v<\d+\zs_\ze\d+>' conceal cchar=,
+" " Conceal underscores in numeric literals with commas
+" syntax match Constant '\v<\d+\zs_\ze\d+>' conceal cchar=,
 
 " Matches x0 -> x₀ A2 -> A₂ word2 -> word₂
 " Use ms=s+1 to avoid concealing the letter before the number
@@ -65,6 +65,9 @@ syntax match Normal '\v[^_]\zs_[kK]\ze>' conceal cchar=ₖ
 syntax match Normal '\v[^_]\zs_[nN]\ze>' conceal cchar=ₙ
 syntax match Normal '\v[^_]\zs_[mM]\ze>' conceal cchar=ₘ
 syntax match Normal '\v[^_]\zs_[tT]\ze>' conceal cchar=ₜ
+
+" Conceal things like a_ -> a'
+syntax match Operator /\<\@!_\(_*\>\)\@=/ conceal cchar=′
 
 syntax match rustOperator '<<' conceal cchar=≺
 syntax match rustOperator '>>' conceal cchar=≻
@@ -200,7 +203,11 @@ syntax keyword rustType Fn FnOnce FnMut conceal cchar=λ
 syntax match rustType '\v\&(str|String)' conceal cchar=𝐒
 
 syntax match rustType '\v\zsvec!\ze\[' conceal
-syntax match rustType '\v<Vec(::)?(new)?' conceal cchar=𝕍
+
+" `Vec::new` has to come after.
+syntax match rustType '\v<Vec>' conceal cchar=𝕍
+syntax match rustType '\v<Vec::new' conceal cchar=𝕍
+
 syntax keyword rustKeyword where conceal cchar=∵
 
 highlight! link rustBuiltin rustOperator
