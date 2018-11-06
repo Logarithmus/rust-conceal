@@ -4,18 +4,18 @@ silent! syntax clear rustOperator
 silent! syntax clear rustRepeat
 
 " Raised dot for static members
-syntax match rustOperator "::" conceal cchar=°
-syntax match rustOperator '\v<Box(::)?(new)?' conceal cchar=□
+syntax match Normal "::" conceal cchar=°
+syntax match Normal '\v<Box(::)?(new)?' conceal cchar=□
 
 " I want the semicolons to fade into the background.
-" syntax match rustOperator ';' conceal cchar=𐤟
-syntax match rustOperator '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
+" syntax match Normal ';' conceal cchar=𐤟
+syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
 
 " TODO try dimming curly braces (or you could conceal them completely because
 " they only denote *scope*, unlike parens
 "XXX cchar= (regular space)
-" syntax match rustOperator '\v(\{ ?)|(\} ?)' conceal cchar=♢
-syntax match rustOperator '\v(\{ ?)|(\} ?)' conceal
+" syntax match Normal '\v(\{ ?)|(\} ?)' conceal cchar=♢
+syntax match Normal '\v(\{ ?)|(\} ?)' conceal
 
 " " Conceal underscores in numeric literals with commas
 " syntax match Constant '\v<\d+\zs_\ze\d+>' conceal cchar=,
@@ -67,53 +67,51 @@ syntax match Normal '\v[^_]\zs_[mM]\ze>' conceal cchar=ₘ
 syntax match Normal '\v[^_]\zs_[tT]\ze>' conceal cchar=ₜ
 
 " Conceal things like a_ -> a'
-syntax match Operator /\<\@!_\(_*\>\)\@=/ conceal cchar=′
+syntax match Normal '\v[^_]\zs_\ze>' conceal cchar=′
 
-syntax match rustOperator '<<' conceal cchar=≺
-syntax match rustOperator '>>' conceal cchar=≻
-syntax match rustOperator '\^' conceal cchar=⊕
-syntax match rustOperator '\v\.\.\=' conceal cchar=…
-syntax match rustOperator '&&' conceal cchar=∧
+syntax match Normal '<<' conceal cchar=≺
+syntax match Normal '>>' conceal cchar=≻
+syntax match Normal '\^' conceal cchar=⊕
+syntax match Normal '\v\.\.\=' conceal cchar=…
+syntax match Normal '&&' conceal cchar=∧
 " Space is required to distinguish this from empty closure
-syntax match rustOperator '[^=,] \zs||\ze ' conceal cchar=∨
+syntax match Normal '[^=,] \zs||\ze ' conceal cchar=∨
 
-syntax match rustOperator "<=" conceal cchar=≤
-syntax match rustOperator ">=" conceal cchar=≥
+syntax match Normal "<=" conceal cchar=≤
+syntax match Normal ">=" conceal cchar=≥
 
-" syntax match rustOperator "->" conceal cchar=→
-" syntax match rustOperator "=>" conceal cchar=⇒
+" syntax match Normal "->" conceal cchar=→
+" syntax match Normal "=>" conceal cchar=⇒
 
 syn match rustRightArrowHead contained ">" conceal
 syn match rustRightArrowTail contained "-" conceal cchar=→
-syn match rustOperator "->" contains=rustRightArrowHead,rustRightArrowTail
+syn match Normal "->" contains=rustRightArrowHead,rustRightArrowTail
 
 syn match rustFatRightArrowHead contained ">" conceal
 syn match rustFatRightArrowTail contained "=" conceal cchar=⇒
-syn match rustOperator "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
+syn match Normal "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
 
-syntax match rustOperator '\<\@!_\(_*\>\)\@=' conceal cchar=′
-
-syntax match rustOperator '\s=\s'ms=s+1,me=e-1 conceal cchar=←
-syntax match rustOperator '\S=\S'ms=s+1,me=e-1 conceal cchar=←
+syntax match Normal '\s=\s'ms=s+1,me=e-1 conceal cchar=←
+syntax match Normal '\S=\S'ms=s+1,me=e-1 conceal cchar=←
 
 " only conceal “==” if alone, to avoid concealing merge conflict markers
-syntax match rustOperator "=\@<!===\@!" conceal cchar=≝
+syntax match Normal "=\@<!===\@!" conceal cchar=≝
 
 " Has to be ! before != for it to work since rules are matched one after the
 " other, so the last one "wins".
-syntax match rustOperator '!' conceal cchar=¬
-syntax match rustOperator '!=' conceal cchar=≠
+syntax match Normal '!' conceal cchar=¬
+syntax match Normal '!=' conceal cchar=≠
 
-syntax match rustOperator '\( \|\)\*\*\( \|\)2\>' conceal cchar=²
-syntax match rustOperator '\( \|\)\*\*\( \|\)n\>' conceal cchar=ⁿ
+syntax match Normal '\( \|\)\*\*\( \|\)2\>' conceal cchar=²
+syntax match Normal '\( \|\)\*\*\( \|\)n\>' conceal cchar=ⁿ
 " only conceals when theres one space on each side of the star, making it
 " unambiguous with pointer dereferencing
-syntax match rustOperator '\s\*\s'ms=s+1,me=e-1 conceal cchar=∙
+syntax match Normal '\s\*\s'ms=s+1,me=e-1 conceal cchar=∙
 
 " Most specific goes last since conceal run top to bottom
-syntax match rustOperator '\v\.iter\(\)' conceal cchar=↑
-syntax match rustOperator '\v\.enumerate\(\)' conceal cchar=⇡
-syntax match rustOperator '\v\.iter\(\)\.enumerate\(\)' conceal cchar=⇡
+syntax match Normal '\v\.iter\(\)' conceal cchar=↑
+syntax match Normal '\v\.enumerate\(\)' conceal cchar=⇡
+syntax match Normal '\v\.iter\(\)\.enumerate\(\)' conceal cchar=⇡
 
 " TODO String::from_string
 " TODO .map .filter .fold .collect
@@ -150,18 +148,16 @@ syntax keyword rustKeyword omega OMEGA conceal cchar=ω
 syntax keyword rustKeyword nabla NABLA conceal cchar=∇
 
 " like APL
-syntax keyword rustOperator in conceal cchar=∈
+syntax keyword Normal in conceal cchar=∈
 " we don't use syn keyword in order to swallow the space after.
-" syntax match rustOperator '\v<pub ' conceal cchar=“
-syntax match rustOperator '\v<pub ' conceal cchar=“
+syntax match Normal '\v<pub ' conceal cchar=“
 "traits and their impls are sections of a paragraph
-syntax keyword rustOperator impl conceal cchar=※
-syntax keyword rustOperator struct conceal cchar=✕
-syntax keyword rustOperator enum conceal cchar=+
-syntax keyword rustOperator trait conceal cchar=§
+syntax keyword Normal impl conceal cchar=※
+syntax keyword Normal struct conceal cchar=✕
+syntax keyword Normal enum conceal cchar=+
+syntax keyword Normal trait conceal cchar=§
 " TODO consider using the pointer symbol for the borrow op/ref op
-syntax keyword rustOperator let conceal cchar=⇨
-" syntax match rustOperator 'let ' conceal
+syntax keyword Normal let conceal cchar=⇨
 syntax keyword rustKeyword Some conceal cchar=✔
 syntax keyword rustConstant None conceal cchar=∅
 " http://www.fileformat.info/info/unicode/block/geometric_shapes/images.htm
