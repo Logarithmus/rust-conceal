@@ -8,7 +8,6 @@ syntax match Normal "::" conceal cchar=°
 syntax match Normal '\v<Box(::)?(new)?' conceal cchar=□
 
 " I want the semicolons to fade into the background.
-" syntax match Normal ';' conceal cchar=𐤟
 syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
 
 " TODO try dimming curly braces (or you could conceal them completely because
@@ -79,9 +78,6 @@ syntax match Normal '[^=,] \zs||\ze ' conceal cchar=∨
 
 syntax match Normal "<=" conceal cchar=≤
 syntax match Normal ">=" conceal cchar=≥
-
-" syntax match Normal "->" conceal cchar=→
-" syntax match Normal "=>" conceal cchar=⇒
 
 syn match rustRightArrowHead contained ">" conceal
 syn match rustRightArrowTail contained "-" conceal cchar=→
