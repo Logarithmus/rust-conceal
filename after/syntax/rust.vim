@@ -108,9 +108,9 @@ syntax match Normal '\( \|\)\*\*\( \|\)n\>' conceal cchar=ⁿ
 syntax match Normal '\s\*\s'ms=s+1,me=e-1 conceal cchar=∙
 
 " Most specific goes last since conceal run top to bottom
-syntax match Normal '\v\.iter\(\)' conceal cchar=↑
-syntax match Normal '\v\.enumerate\(\)' conceal cchar=⇡
-syntax match Normal '\v\.iter\(\)\.enumerate\(\)' conceal cchar=⇡
+syntax match Normal '\v[^\n ]\zs\.iter\(\)\ze' conceal cchar=⇡
+syntax match Normal '\v\.enumerate\(\)' conceal cchar=↑
+syntax match Normal '\v\.iter\(\)\.enumerate\(\)' conceal cchar=↑
 
 " TODO String::from_string
 " TODO .map .filter .fold .collect
