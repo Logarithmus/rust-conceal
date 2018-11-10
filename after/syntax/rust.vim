@@ -14,7 +14,8 @@ syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
 " they only denote *scope*, unlike parens
 "XXX cchar= (regular space)
 " syntax match Normal '\v(\{ ?)|(\} ?)' conceal cchar=♢
-syntax match Normal '\v(\{ ?)|(\} ?)' conceal
+" TODO don't hide but just make very dim
+syntax match Comment '\v(\{ ?)|(\} ?)'
 
 " " Conceal underscores in numeric literals with commas
 " syntax match Constant '\v<\d+\zs_\ze\d+>' conceal cchar=,
