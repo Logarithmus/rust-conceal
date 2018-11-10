@@ -37,6 +37,8 @@ syntax match Normal '\v<[[:alpha:]_]+7>'ms=e conceal cchar=₇
 " the ranges avoid f8, u8,i8
 syntax match Normal '\v<[a-eg-hj-tv-z_]+8>'ms=e conceal cchar=₈
 syntax match Normal '\v<[[:alpha:]_]+9>'ms=e conceal cchar=₉
+syntax match Normal '\v[^ <>_]\zs_\ze>' conceal cchar=′
+" syntax match Normal '\v\zs_\ze>' conceal cchar=′
 
 " Numbers
 syntax match Normal '\v[^_]\zs_0\ze>' conceal cchar=₀
