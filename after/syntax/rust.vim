@@ -98,7 +98,7 @@ syntax match Normal "=\@<!===\@!" conceal cchar=≝
 
 " Has to be ! before != for it to work since rules are matched one after the
 " other, so the last one "wins".
-syntax match Normal '!' conceal cchar=¬
+" syntax match Normal '!' conceal cchar=¬
 syntax match Normal '!=' conceal cchar=≠
 
 syntax match Normal '\( \|\)\*\*\( \|\)2\>' conceal cchar=²
