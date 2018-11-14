@@ -215,9 +215,4 @@ highlight! link rustSpecial Special
 highlight! link rustIdentifier Identifier
 highlight! link rustType Type
 
-" changing this changes the color of vim's conceal
-highlight! link Conceal Normal
-" highlight! link Conceal PreProc
-
 setlocal conceallevel=2
-
