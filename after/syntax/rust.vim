@@ -75,7 +75,7 @@ syntax match Normal '<<' conceal cchar=≺
 syntax match Normal '>>' conceal cchar=≻
 syntax match Normal '\^' conceal cchar=⊕
 syntax match Normal '\v\.\.\=' conceal cchar=…
-syntax match Normal '&&' conceal cchar=∧
+syntax match Normal '\v(^|\s|\W)\zs\&\&\ze(\W|$)' conceal cchar=∧
 " Space is required to distinguish this from empty closure
 syntax match Normal '[^=,] \zs||\ze ' conceal cchar=∨
 
