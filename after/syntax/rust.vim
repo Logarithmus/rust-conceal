@@ -6,6 +6,7 @@ silent! syntax clear rustRepeat
 " Raised dot for static members
 syntax match Normal "::" conceal cchar=°
 syntax match Normal '\v<Box(::)?(new)?' conceal cchar=□
+syntax keyword Normal box conceal cchar=□
 
 " I want the semicolons to fade into the background.
 syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
