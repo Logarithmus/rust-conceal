@@ -8,6 +8,8 @@ syntax match Normal "::" conceal cchar=°
 syntax match Normal '\v<Box(::)?(new)?' conceal cchar=□
 syntax keyword Normal box conceal cchar=□
 
+syntax match Normal '\v<crate(::)?' conceal cchar=☒
+
 " I want the semicolons to fade into the background.
 syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
 
@@ -71,6 +73,8 @@ syntax match Normal '\v[^_]\zs_[tT]\ze>' conceal cchar=ₜ
 
 " Conceal things like a_ -> a'
 syntax match Normal '\v[^_]\zs_\ze>' conceal cchar=′
+" Underscore by itself is not concealed
+syntax match Normal '\v<\zs_\ze>' conceal cchar=_
 
 syntax match Normal '<<' conceal cchar=≺
 syntax match Normal '>>' conceal cchar=≻
