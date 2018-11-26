@@ -198,7 +198,9 @@ syntax keyword rustType u32 conceal cchar=ℕ
 syntax keyword rustType u64 conceal cchar=ℕ
 syntax keyword rustType usize conceal cchar=ℕ
 
-syntax keyword rustType str String conceal cchar=𝐒
+syntax keyword rustType str conceal cchar=𝐒
+syntax match Normal '\v<String(::)?(new|from)?' conceal cchar=𝐒
+
 syntax keyword rustType Fn FnOnce FnMut conceal cchar=λ
 syntax match rustType '\v\&(str|String)' conceal cchar=𝐒
 
