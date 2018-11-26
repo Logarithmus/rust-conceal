@@ -98,7 +98,7 @@ syn match Normal "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
 syntax match Normal '\s=\s'ms=s+1,me=e-1 conceal cchar=←
 syntax match Normal '\S=\S'ms=s+1,me=e-1 conceal cchar=←
 
-" only conceal “==” if alone, to avoid concealing merge conflict markers
+" only conceal "==" if alone, to avoid concealing merge conflict markers
 syntax match Normal "=\@<!===\@!" conceal cchar=≝
 
 " Has to be ! before != for it to work since rules are matched one after the
@@ -120,36 +120,36 @@ syntax match Normal '\v\.iter\(\)\.enumerate\(\)' conceal cchar=↑
 " TODO String::from_string
 " TODO .map .filter .fold .collect
 
-syntax keyword rustKeyword alpha ALPHA conceal cchar=α
-syntax keyword rustKeyword beta BETA conceal cchar=β
-syntax keyword rustKeyword Gamma conceal cchar=Γ
-syntax keyword rustKeyword gamma GAMMA conceal cchar=γ
-syntax keyword rustKeyword Delta conceal cchar=Δ
-syntax keyword rustKeyword delta DELTA conceal cchar=δ
-syntax keyword rustKeyword epsilon EPSILON conceal cchar=ε
-syntax keyword rustKeyword zeta ZETA conceal cchar=ζ
-syntax keyword rustKeyword eta ETA conceal cchar=η
-syntax keyword rustKeyword Theta conceal cchar=ϴ
-syntax keyword rustKeyword theta THETA conceal cchar=θ
-syntax keyword rustKeyword kappa KAPPA conceal cchar=κ
-syntax keyword rustKeyword lambda LAMBDA lambda_ _lambda conceal cchar=λ
-syntax keyword rustKeyword mu MU conceal cchar=μ
-syntax keyword rustKeyword nu NU conceal cchar=ν
-syntax keyword rustKeyword Xi conceal cchar=Ξ
-syntax keyword rustKeyword xi XI conceal cchar=ξ
-syntax keyword rustKeyword Pi conceal cchar=Π
-syntax keyword rustKeyword rho RHO conceal cchar=ρ
-syntax keyword rustKeyword sigma SIGMA conceal cchar=σ
-syntax keyword rustKeyword tau TAU conceal cchar=τ
-syntax keyword rustKeyword upsilon UPSILON conceal cchar=υ
-syntax keyword rustKeyword Phi conceal cchar=Φ
-syntax keyword rustKeyword phi PHI conceal cchar=φ
-syntax keyword rustKeyword chi CHI conceal cchar=χ
-syntax keyword rustKeyword Psi conceal cchar=Ψ
-syntax keyword rustKeyword psi PSI conceal cchar=ψ
-syntax keyword rustKeyword Omega conceal cchar=Ω
-syntax keyword rustKeyword omega OMEGA conceal cchar=ω
-syntax keyword rustKeyword nabla NABLA conceal cchar=∇
+syntax keyword Normal alpha ALPHA conceal cchar=α
+syntax keyword Normal beta BETA conceal cchar=β
+syntax keyword Normal Gamma conceal cchar=Γ
+syntax keyword Normal gamma GAMMA conceal cchar=γ
+syntax keyword Normal Delta conceal cchar=Δ
+syntax keyword Normal delta DELTA conceal cchar=δ
+syntax keyword Normal epsilon EPSILON conceal cchar=ε
+syntax keyword Normal zeta ZETA conceal cchar=ζ
+syntax keyword Normal eta ETA conceal cchar=η
+syntax keyword Normal Theta conceal cchar=ϴ
+syntax keyword Normal theta THETA conceal cchar=θ
+syntax keyword Normal kappa KAPPA conceal cchar=κ
+syntax keyword Normal lambda LAMBDA lambda_ _lambda conceal cchar=λ
+syntax keyword Normal mu MU conceal cchar=μ
+syntax keyword Normal nu NU conceal cchar=ν
+syntax keyword Normal Xi conceal cchar=Ξ
+syntax keyword Normal xi XI conceal cchar=ξ
+syntax keyword Normal Pi conceal cchar=Π
+syntax keyword Normal rho RHO conceal cchar=ρ
+syntax keyword Normal sigma SIGMA conceal cchar=σ
+syntax keyword Normal tau TAU conceal cchar=τ
+syntax keyword Normal upsilon UPSILON conceal cchar=υ
+syntax keyword Normal Phi conceal cchar=Φ
+syntax keyword Normal phi PHI conceal cchar=φ
+syntax keyword Normal chi CHI conceal cchar=χ
+syntax keyword Normal Psi conceal cchar=Ψ
+syntax keyword Normal psi PSI conceal cchar=ψ
+syntax keyword Normal Omega conceal cchar=Ω
+syntax keyword Normal omega OMEGA conceal cchar=ω
+syntax keyword Normal nabla NABLA conceal cchar=∇
 
 " like APL
 syntax keyword Normal in conceal cchar=∈
@@ -162,55 +162,56 @@ syntax keyword Normal enum conceal cchar=+
 syntax keyword Normal trait conceal cchar=§
 " TODO consider using the pointer symbol for the borrow op/ref op
 syntax keyword Normal let conceal cchar=⇨
-syntax keyword rustKeyword Some conceal cchar=✔
-syntax keyword rustConstant None conceal cchar=∅
+syntax keyword Normal Some conceal cchar=✔
+syntax keyword Constant None conceal cchar=∅
 " http://www.fileformat.info/info/unicode/block/geometric_shapes/images.htm
-syntax keyword rustConstant break conceal cchar=◁
-syntax keyword rustKeyword continue conceal cchar=↻
-syntax keyword rustKeyword return conceal cchar=◀
-syntax keyword rustKeyword match conceal cchar=▸
-syntax keyword rustKeyword if conceal cchar=▸
-syntax match rustKeyword 'else if' conceal cchar=▹
-syntax keyword rustKeyword else conceal cchar=▪
-syntax keyword rustConstant true conceal cchar=⊤
-syntax keyword rustConstant false conceal cchar=⊥
-syntax match rustKeyword '^\%(.*impl\)\@!.*\zs\<for\>' conceal cchar=∀
-" syntax keyword rustKeyword for conceal cchar=∀
-" syntax match rustKeyword '\v(impl .+)@! \zsfor\ze' conceal cchar=∀
-syntax keyword rustKeyword while conceal cchar=⥁
-syntax keyword rustKeyword loop conceal cchar=∞
-syntax keyword rustKeyword unsafe conceal cchar=☡
-syntax keyword rustKeyword fn conceal cchar=λ
-" syntax keyword rustKeyword Err conceal cchar=✘
-syntax keyword rustKeyword self conceal cchar=⚕
+syntax keyword Keyword break conceal cchar=◁
+syntax keyword Keyword continue conceal cchar=↻
+syntax keyword Keyword return conceal cchar=◀
+syntax keyword Keyword match conceal cchar=▸
+syntax keyword Keyword if conceal cchar=▸
+syntax match Keyword 'else if' conceal cchar=▹
+syntax keyword Keyword else conceal cchar=▪
+syntax keyword Constant true conceal cchar=⊤
+syntax keyword Constant false conceal cchar=⊥
+syntax match Normal '^\%(.*impl\)\@!.*\zs\<for\>' conceal cchar=∀
+" syntax keyword Keyword for conceal cchar=∀
+" syntax match Keyword '\v(impl .+)@! \zsfor\ze' conceal cchar=∀
+syntax keyword Normal while conceal cchar=⥁
+syntax keyword Keyword loop conceal cchar=∞
+syntax keyword Keyword unsafe conceal cchar=☡
+syntax keyword Normal fn conceal cchar=λ
+" syntax keyword Keyword Err conceal cchar=✘
+syntax match Normal '\v<self>' conceal cchar=⚕
+syntax match Normal '\v<self>\.' conceal cchar=“
 
-syntax keyword rustType bool conceal cchar=𝔹
-syntax keyword rustType char conceal cchar=∁
+syntax keyword Type bool conceal cchar=𝔹
+syntax keyword Type char conceal cchar=∁
 
-syntax keyword rustType f32 conceal cchar=ℝ
-syntax keyword rustType f64 conceal cchar=ℝ
+syntax keyword Type f32 conceal cchar=ℝ
+syntax keyword Type f64 conceal cchar=ℝ
 
-syntax keyword rustType i32 conceal cchar=ℤ
-syntax keyword rustType i64 conceal cchar=ℤ
-syntax keyword rustType isize conceal cchar=ℤ
+syntax keyword Type i32 conceal cchar=ℤ
+syntax keyword Type i64 conceal cchar=ℤ
+syntax keyword Type isize conceal cchar=ℤ
 
-syntax keyword rustType u32 conceal cchar=ℕ
-syntax keyword rustType u64 conceal cchar=ℕ
-syntax keyword rustType usize conceal cchar=ℕ
+syntax keyword Type u32 conceal cchar=ℕ
+syntax keyword Type u64 conceal cchar=ℕ
+syntax keyword Type usize conceal cchar=ℕ
 
-syntax keyword rustType str conceal cchar=𝐒
+syntax keyword Type str conceal cchar=𝐒
 syntax match Normal '\v<String(::)?(new|from)?' conceal cchar=𝐒
 
-syntax keyword rustType Fn FnOnce FnMut conceal cchar=λ
-syntax match rustType '\v\&(str|String)' conceal cchar=𝐒
+syntax keyword Type Fn FnOnce FnMut conceal cchar=λ
+" syntax match Type '\v\&(str|String)' conceal cchar=𝐒
 
-syntax match rustType '\v\zsvec!\ze\[' conceal
+syntax match Type '\v\zsvec!\ze\[' conceal
 
 " `Vec::new` has to come after.
-syntax match rustType '\v<Vec>' conceal cchar=𝕍
-syntax match rustType '\v<Vec::new' conceal cchar=𝕍
+syntax match Type '\v<Vec>' conceal cchar=𝕍
+syntax match Type '\v<Vec::new' conceal cchar=𝕍
 
-syntax keyword rustKeyword where conceal cchar=∵
+syntax keyword Keyword where conceal cchar=∵
 
 highlight! link rustBuiltin rustOperator
 highlight! link rustOperator Operator
