@@ -182,7 +182,7 @@ syntax keyword Keyword loop conceal cchar=∞
 syntax keyword Keyword unsafe conceal cchar=☡
 syntax keyword Normal fn conceal cchar=λ
 " syntax keyword Keyword Err conceal cchar=✘
-syntax match Normal '\v<self>' conceal cchar=⚕
+syntax match Normal '\v<[sS]elf>' conceal cchar=⚕
 syntax match Normal '\v<self>\.' conceal cchar=“
 
 syntax keyword Type bool conceal cchar=𝔹
