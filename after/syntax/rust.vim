@@ -26,9 +26,10 @@ syntax match Comment '\v(\{ ?)|(\} ?)'
 " Matches x0 -> x₀ A2 -> A₂ word2 -> word₂
 " Use ms=s+1 to avoid concealing the letter before the number
 
-syntax match Normal '\v[^[:digit:]]\zs\.0\ze[^[:digit:]]?' conceal cchar=₀
-syntax match Normal '\v[^[:digit:]]\zs\.1\ze[^[:digit:]]?' conceal cchar=₁
-syntax match Normal '\v[[:digit:]]\zs\.2\ze[^[:digit:]]?' conceal cchar=₂
+" syntax match Normal '\v[^[:digit:]]\zs\.0\ze[^[:digit:]]?' conceal cchar=₀
+" syntax match Normal '\v[^[:digit:]]\zs\.1\ze[^[:digit:]]?' conceal cchar=₁
+" syntax match Normal '\v[[:digit:]]\zs\.2\ze[^[:digit:]]?' conceal cchar=₂
+
 syntax match Normal '\v<[[:alpha:]_]+0>'ms=e conceal cchar=₀
 syntax match Normal '\v<[[:alpha:]_]+1>'ms=e conceal cchar=₁
 syntax match Normal '\v<[[:alpha:]_]+2>'ms=e conceal cchar=₂
