@@ -93,7 +93,7 @@ syn match rustRightArrowTail contained "-" conceal cchar=→
 syn match Normal "->" contains=rustRightArrowHead,rustRightArrowTail
 
 syn match rustFatRightArrowHead contained ">" conceal
-syn match rustFatRightArrowTail contained "=" conceal cchar=⇒
+syn match rustFatRightArrowTail contained "=" conceal cchar=↦
 syn match Normal "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
 
 syntax match Normal '\s=\s'ms=s+1,me=e-1 conceal cchar=←
@@ -156,11 +156,12 @@ syntax keyword Normal nabla NABLA conceal cchar=∇
 syntax keyword Normal in conceal cchar=∈
 " we don't use syn keyword in order to swallow the space after.
 syntax match Normal '\v<pub ' conceal cchar=“
+syntax match Normal '\v<pub(\(crate\))? ' conceal cchar=“
 "traits and their impls are sections of a paragraph
 syntax keyword Normal impl conceal cchar=※
 syntax keyword Normal struct conceal cchar=✕
 syntax keyword Normal enum conceal cchar=+
-syntax keyword Normal trait conceal cchar=§
+" syntax keyword Normal trait conceal cchar=§
 " TODO consider using the pointer symbol for the borrow op/ref op
 syntax keyword Normal let conceal cchar=⇨
 syntax keyword Normal Some conceal cchar=✔
