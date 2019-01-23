@@ -226,5 +226,3 @@ highlight! link rustConstant Constant
 highlight! link rustSpecial Special
 highlight! link rustIdentifier Identifier
 highlight! link rustType Type
-
-setlocal conceallevel=2
