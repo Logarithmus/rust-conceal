@@ -95,6 +95,8 @@ syntax match rustFatRightArrowHead contained ">" conceal
 syntax match rustFatRightArrowTail contained "=" conceal cchar=↦
 syntax match Normal "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
 
+syntax match Identifier '\v\.unwrap\(\)' conceal cchar=!
+
 syntax match Normal '\s=\s'ms=s+1,me=e-1 conceal cchar=←
 syntax match Normal '\S=\S'ms=s+1,me=e-1 conceal cchar=←
 
