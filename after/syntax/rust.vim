@@ -153,37 +153,23 @@ syntax keyword Normal nabla NABLA conceal cchar=∇
 
 " like APL
 syntax keyword Normal in conceal cchar=∈
-" we don't use syn keyword in order to swallow the space after.
+" We don't use `syntax keyword` in order to swallow the space after.
 syntax match Normal '\v<pub ' conceal cchar=“
 syntax match Normal '\v<pub(\(crate\))? ' conceal cchar=“
-"traits and their impls are sections of a paragraph
-syntax keyword Normal impl conceal cchar=※
-syntax keyword Normal struct conceal cchar=✕
-syntax keyword Normal enum conceal cchar=+
-" syntax keyword Normal trait conceal cchar=§
 " TODO consider using the pointer symbol for the borrow op/ref op
-syntax keyword Normal let conceal cchar=⇨
 syntax keyword Normal Some conceal cchar=✔
 syntax keyword Constant None conceal cchar=∅
 " http://www.fileformat.info/info/unicode/block/geometric_shapes/images.htm
 syntax keyword Keyword break conceal cchar=◁
 syntax keyword Keyword continue conceal cchar=↻
-syntax keyword Keyword return conceal cchar=◀
 syntax keyword Keyword match conceal cchar=▸
-syntax keyword Keyword if conceal cchar=▸
-syntax match Keyword 'else if' conceal cchar=▹
-syntax keyword Keyword else conceal cchar=▪
 syntax keyword Constant true conceal cchar=⊤
 syntax keyword Constant false conceal cchar=⊥
 syntax match Normal '^\%(.*impl\)\@!.*\zs\<for\>' conceal cchar=∀
-" syntax keyword Keyword for conceal cchar=∀
-" syntax match Keyword '\v(impl .+)@! \zsfor\ze' conceal cchar=∀
 syntax keyword Normal while conceal cchar=⥁
 syntax keyword Keyword loop conceal cchar=∞
-syntax keyword Keyword unsafe conceal cchar=☡
 syntax keyword Normal fn conceal cchar=λ
 " syntax keyword Keyword Err conceal cchar=✘
-syntax match Normal '\v<[sS]elf>' conceal cchar=⚕
 syntax match Normal '\v<self>\.' conceal cchar=“
 
 syntax keyword Type bool conceal cchar=𝔹
