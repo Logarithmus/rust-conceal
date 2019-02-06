@@ -194,7 +194,8 @@ syntax keyword Type Fn FnOnce FnMut conceal cchar=λ
 
 syntax match Type '\v\zsvec!\ze\[' conceal
 
-syntax keyword Type Option Result conceal cchar=?
+syntax keyword Type Option conceal cchar=?
+syntax keyword Type Result conceal cchar=⁇
 
 " `Vec::new` has to come after.
 syntax match Type '\v<Vec>' conceal cchar=𝕍
