@@ -8,8 +8,6 @@ syntax match Normal "::" conceal cchar=°
 syntax match Normal '\v<Box(::)?(new)?' conceal cchar=□
 syntax keyword Normal box conceal cchar=□
 
-syntax match Normal '\v<crate(::)?' conceal cchar=☒
-
 " I want the semicolons to fade into the background.
 " syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
 syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal
@@ -89,13 +87,13 @@ syntax match Normal '[^=,] \zs||\ze ' conceal cchar=∨
 syntax match Normal "<=" conceal cchar=≤
 syntax match Normal ">=" conceal cchar=≥
 
-syn match rustRightArrowHead contained ">" conceal
-syn match rustRightArrowTail contained "-" conceal cchar=→
-syn match Normal "->" contains=rustRightArrowHead,rustRightArrowTail
+syntax match rustRightArrowHead contained ">" conceal
+syntax match rustRightArrowTail contained "-" conceal cchar=→
+syntax match Normal "->" contains=rustRightArrowHead,rustRightArrowTail
 
-syn match rustFatRightArrowHead contained ">" conceal
-syn match rustFatRightArrowTail contained "=" conceal cchar=↦
-syn match Normal "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
+syntax match rustFatRightArrowHead contained ">" conceal
+syntax match rustFatRightArrowTail contained "=" conceal cchar=↦
+syntax match Normal "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
 
 syntax match Normal '\s=\s'ms=s+1,me=e-1 conceal cchar=←
 syntax match Normal '\S=\S'ms=s+1,me=e-1 conceal cchar=←
