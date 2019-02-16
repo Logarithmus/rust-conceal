@@ -203,7 +203,8 @@ syntax keyword Type Result conceal cchar=⁇
 syntax match Type '\v<Vec>' conceal cchar=𝕍
 syntax match Type '\v<Vec::new' conceal cchar=𝕍
 
-syntax keyword Keyword where conceal cchar=∵
+syntax keyword Comment where conceal cchar=∵
+syntax keyword Comment let
 
 highlight! link rustBuiltin rustOperator
 highlight! link rustOperator Operator
