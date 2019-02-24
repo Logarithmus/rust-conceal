@@ -10,7 +10,7 @@ syntax keyword Normal box conceal cchar=□
 
 " I want the semicolons to fade into the background.
 " syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
-syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal
+" syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal
 
 " TODO try dimming curly braces (or you could conceal them completely because
 " they only denote *scope*, unlike parens
