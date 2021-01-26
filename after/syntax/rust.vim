@@ -131,36 +131,36 @@ syntax match Normal '\s\*\s'ms=s+1,me=e-1 conceal cchar=∙
 " TODO String::from_string
 " TODO .map .filter .fold .collect
 
-" syntax keyword Normal alpha ALPHA conceal cchar=α
-" syntax keyword Normal beta BETA conceal cchar=β
-" syntax keyword Normal Gamma conceal cchar=Γ
-" syntax keyword Normal gamma GAMMA conceal cchar=γ
-" syntax keyword Normal Delta conceal cchar=Δ
-" syntax keyword Normal delta DELTA conceal cchar=δ
-" syntax keyword Normal epsilon EPSILON conceal cchar=ε
-" syntax keyword Normal zeta ZETA conceal cchar=ζ
-" syntax keyword Normal eta ETA conceal cchar=η
-" syntax keyword Normal Theta conceal cchar=ϴ
-" syntax keyword Normal theta THETA conceal cchar=θ
-" syntax keyword Normal kappa KAPPA conceal cchar=κ
-" syntax keyword Normal lambda LAMBDA lambda_ _lambda conceal cchar=λ
-" syntax keyword Normal mu MU conceal cchar=μ
-" syntax keyword Normal nu NU conceal cchar=ν
-" syntax keyword Normal Xi conceal cchar=Ξ
-" syntax keyword Normal xi XI conceal cchar=ξ
-" syntax keyword Normal Pi conceal cchar=Π
-" syntax keyword Normal rho RHO conceal cchar=ρ
-" syntax keyword Normal sigma SIGMA conceal cchar=σ
-" syntax keyword Normal tau TAU conceal cchar=τ
-" syntax keyword Normal upsilon UPSILON conceal cchar=υ
-" syntax keyword Normal Phi conceal cchar=Φ
-" syntax keyword Normal phi PHI conceal cchar=φ
-" syntax keyword Normal chi CHI conceal cchar=χ
-" syntax keyword Normal Psi conceal cchar=Ψ
-" syntax keyword Normal psi PSI conceal cchar=ψ
-" syntax keyword Normal Omega conceal cchar=Ω
-" syntax keyword Normal omega OMEGA conceal cchar=ω
-" syntax keyword Normal nabla NABLA conceal cchar=∇
+syntax keyword Normal alpha ALPHA conceal cchar=α
+syntax keyword Normal beta BETA conceal cchar=β
+syntax keyword Normal Gamma conceal cchar=Γ
+syntax keyword Normal gamma GAMMA conceal cchar=γ
+syntax keyword Normal Delta conceal cchar=Δ
+syntax keyword Normal delta DELTA conceal cchar=δ
+syntax keyword Normal epsilon EPSILON conceal cchar=ε
+syntax keyword Normal zeta ZETA conceal cchar=ζ
+syntax keyword Normal eta ETA conceal cchar=η
+syntax keyword Normal Theta conceal cchar=ϴ
+syntax keyword Normal theta THETA conceal cchar=θ
+syntax keyword Normal kappa KAPPA conceal cchar=κ
+syntax keyword Normal lambda LAMBDA lambda_ _lambda conceal cchar=λ
+syntax keyword Normal mu MU conceal cchar=μ
+syntax keyword Normal nu NU conceal cchar=ν
+syntax keyword Normal Xi conceal cchar=Ξ
+syntax keyword Normal xi XI conceal cchar=ξ
+syntax keyword Normal Pi conceal cchar=Π
+syntax keyword Normal rho RHO conceal cchar=ρ
+syntax keyword Normal sigma SIGMA conceal cchar=σ
+syntax keyword Normal tau TAU conceal cchar=τ
+syntax keyword Normal upsilon UPSILON conceal cchar=υ
+syntax keyword Normal Phi conceal cchar=Φ
+syntax keyword Normal phi PHI conceal cchar=φ
+syntax keyword Normal chi CHI conceal cchar=χ
+syntax keyword Normal Psi conceal cchar=Ψ
+syntax keyword Normal psi PSI conceal cchar=ψ
+syntax keyword Normal Omega conceal cchar=Ω
+syntax keyword Normal omega OMEGA conceal cchar=ω
+syntax keyword Normal nabla NABLA conceal cchar=∇
 
 " like APL
 syntax keyword Normal in conceal cchar=∈
@@ -201,7 +201,7 @@ syntax keyword Type str conceal cchar=𝐒
 syntax match Normal '\v<String(::)?(new|from)?' conceal cchar=𝐒
 
 syntax keyword Type Fn FnOnce FnMut conceal cchar=λ
-" syntax match Type '\v\&(str|String)' conceal cchar=𝐒
+syntax match Type '\v\&(str|String)' conceal cchar=𝐒
 
 syntax match Type '\v\zsvec!\ze\[' conceal
 
@@ -209,18 +209,18 @@ syntax keyword Type Option conceal cchar=?
 syntax keyword Type Result conceal cchar=⁇
 
 " `Vec::new` has to come after.
-" syntax match Type '\v<Vec>' conceal cchar=𝕍
-" syntax match Type '\v<Vec::new' conceal cchar=𝕍
+syntax match Type '\v<Vec>' conceal cchar=𝕍
+syntax match Type '\v<Vec::new' conceal cchar=𝕍
 
 syntax keyword Comment where conceal cchar=∵
 syntax keyword Comment let break if else continue
 
-highlight! link rustBuiltin rustOperator
-highlight! link rustOperator Operator
-highlight! link rustStatement Statement
-highlight! link rustKeyword Keyword
-highlight! link rustComment Comment
-highlight! link rustConstant Constant
-highlight! link rustSpecial Special
-highlight! link rustIdentifier Identifier
-highlight! link rustType Type
+" highlight! link rustBuiltin rustOperator
+" highlight! link rustOperator Operator
+" highlight! link rustStatement Statement
+" highlight! link rustKeyword Keyword
+" highlight! link rustComment Comment
+" highlight! link rustConstant Constant
+" highlight! link rustSpecial Special
+" highlight! link rustIdentifier Identifier
+" highlight! link rustType Type
