@@ -183,30 +183,30 @@ syntax keyword Comment fn conceal cchar=λ
 " syntax keyword Keyword Err conceal cchar=✘
 " syntax match Normal '\v<self>\.' conceal cchar=“
 
-syntax keyword Type bool conceal cchar=𝔹
-syntax keyword Type char conceal cchar=∁
+" syntax keyword Type bool conceal cchar=𝔹
+" syntax keyword Type char conceal cchar=∁
+" 
+" syntax keyword Type f32 conceal cchar=ℝ
+" syntax keyword Type f64 conceal cchar=ℝ
+" 
+" syntax keyword Type i32 conceal cchar=ℤ
+" syntax keyword Type i64 conceal cchar=ℤ
+" syntax keyword Type isize conceal cchar=ℤ
+" 
+" syntax keyword Type u32 conceal cchar=ℕ
+" syntax keyword Type u64 conceal cchar=ℕ
+" syntax keyword Type usize conceal cchar=ℕ
 
-syntax keyword Type f32 conceal cchar=ℝ
-syntax keyword Type f64 conceal cchar=ℝ
-
-syntax keyword Type i32 conceal cchar=ℤ
-syntax keyword Type i64 conceal cchar=ℤ
-syntax keyword Type isize conceal cchar=ℤ
-
-syntax keyword Type u32 conceal cchar=ℕ
-syntax keyword Type u64 conceal cchar=ℕ
-syntax keyword Type usize conceal cchar=ℕ
-
-syntax keyword Type str conceal cchar=𝐒
-syntax match Normal '\v<String(::)?(new|from)?' conceal cchar=𝐒
+" syntax keyword Type str conceal cchar=𝐒
+" syntax match Normal '\v<String(::)?(new|from)?' conceal cchar=𝐒
 
 syntax keyword Type Fn FnOnce FnMut conceal cchar=λ
 syntax match Type '\v\&(str|String)' conceal cchar=𝐒
 
 syntax match Type '\v\zsvec!\ze\[' conceal
 
-syntax keyword Type Option conceal cchar=?
-syntax keyword Type Result conceal cchar=⁇
+" syntax keyword Type Option conceal cchar=?
+" syntax keyword Type Result conceal cchar=⁇
 
 " `Vec::new` has to come after.
 syntax match Type '\v<Vec>' conceal cchar=𝕍
