@@ -13,12 +13,12 @@ endif
 
 " Raised dot for static members
 " syntax match Normal "::" conceal cchar=°
-syntax match Normal '\v<Box(::)?(new)?' conceal cchar=□
-syntax keyword Normal box conceal cchar=□
+" syntax match Normal '\v<Box(::)?(new)?' conceal cchar=□
+" syntax keyword Normal box conceal cchar=□
 
 " I want the semicolons to fade into the background.
 " syntax match Normal '\v\zs;\ze(\s*//.*)?$' conceal cchar=♢
-syntax match Comment '\v\zs;\ze(\s*//.*)?$'
+" syntax match Comment '\v\zs;\ze(\s*//.*)?$'
 
 " TODO try dimming curly braces (or you could conceal them completely because
 " they only denote *scope*, unlike parens
@@ -80,30 +80,30 @@ syntax match Comment '\v\zs;\ze(\s*//.*)?$'
 " syntax match Normal '\v[^_]\zs_[tT]\ze>' conceal cchar=ₜ
 
 " Conceal things like a_ -> a'
-syntax match Normal '\v[^_]\zs_\ze>' conceal cchar=′
+" syntax match Normal '\v[^_]\zs_\ze>' conceal cchar=′
 " Underscore by itself is not concealed
-syntax match Normal '\v<\zs_\ze>' conceal cchar=_
+" syntax match Normal '\v<\zs_\ze>' conceal cchar=_
 
-syntax match Normal '<<' conceal cchar=≺
-syntax match Normal '>>' conceal cchar=≻
-syntax match Normal '\^' conceal cchar=⊕
-syntax match Normal '\v\.\.\=' conceal cchar=…
-syntax match Normal '\v(^|\s|\W)\zs\&\&\ze(\W|$)' conceal cchar=∧
-" Space is required to distinguish this from empty closure
-syntax match Normal '[^=,] \zs||\ze ' conceal cchar=∨
+" syntax match Normal '<<' conceal cchar=≺
+" syntax match Normal '>>' conceal cchar=≻
+" syntax match Normal '\^' conceal cchar=⊕
+" syntax match Normal '\v\.\.\=' conceal cchar=…
+" syntax match Normal '\v(^|\s|\W)\zs\&\&\ze(\W|$)' conceal cchar=∧
+" " Space is required to distinguish this from empty closure
+" syntax match Normal '[^=,] \zs||\ze ' conceal cchar=∨
 
-syntax match Normal "<=" conceal cchar=≤
-syntax match Normal ">=" conceal cchar=≥
+" syntax match Normal "<=" conceal cchar=≤
+" syntax match Normal ">=" conceal cchar=≥
 
 " syntax match rustRightArrowHead contained ">" conceal
 " syntax match rustRightArrowTail contained "-" conceal cchar=→
 " syntax match Normal "->" contains=rustRightArrowHead,rustRightArrowTail
-syntax match Normal "->" conceal cchar=→
+" syntax match Normal "->" conceal cchar=→
 
 " syntax match rustFatRightArrowHead contained ">" conceal
 " syntax match rustFatRightArrowTail contained "=" conceal cchar=↦
 " syntax match Normal "=>" contains=rustFatRightArrowHead,rustFatRightArrowTail
-syntax match Normal "=>" conceal cchar=↦
+" syntax match Normal "=>" conceal cchar=↦
 
 " syntax match Identifier '\v\.unwrap\(\)' conceal cchar=!
 
@@ -112,12 +112,12 @@ syntax match Normal "=>" conceal cchar=↦
 
 " only conceal "==" if alone, to avoid concealing merge conflict markers
 " syntax match Normal "=\@<!===\@!" conceal cchar=≝
-syntax match Normal '==' conceal cchar=≝
+" syntax match Normal '==' conceal cchar=≝
 
 " Has to be ! before != for it to work since rules are matched one after the
 " other, so the last one "wins".
 " syntax match Normal '!' conceal cchar=¬
-syntax match Normal '!=' conceal cchar=≠
+" syntax match Normal '!=' conceal cchar=≠
 
 " Only conceals when there's one space on each side of the star, making it
 " unambiguous with pointer dereferencing.
@@ -166,19 +166,19 @@ syntax keyword Normal nabla NABLA conceal cchar=∇
 syntax keyword Normal in conceal cchar=∈
 " We don't use `syntax keyword` in order to swallow the space after.
 " syntax match Normal '\v<pub>' conceal cchar=“
-syntax match Normal '\v\zs<pub(\(crate\))?\ze ' conceal cchar=“
+" syntax match Normal '\v\zs<pub(\(crate\))?\ze ' conceal cchar=“
 " TODO consider using the pointer symbol for the borrow op/ref op
 syntax keyword Normal Some conceal cchar=✔
-" syntax keyword Constant None conceal cchar=∅
+syntax keyword Constant None conceal cchar=∅
 " http://www.fileformat.info/info/unicode/block/geometric_shapes/images.htm
-syntax keyword Comment match conceal cchar=▸
+" syntax keyword Comment match conceal cchar=▸
 syntax keyword Constant true conceal cchar=⊤
 syntax keyword Constant false conceal cchar=⊥
 syntax match Comment '^\%(.*impl\)\@!.*\zs\<for\>' conceal cchar=∀
 " syntax keyword Normal while conceal cchar=⥁
 " syntax keyword Comment loop conceal cchar=∞
-syntax keyword Comment loop
-" syntax keyword Normal fn conceal cchar=λ
+" syntax keyword Comment loop
+syntax keyword Normal fn conceal cchar=λ
 syntax keyword Comment fn conceal cchar=λ
 " syntax keyword Keyword Err conceal cchar=✘
 " syntax match Normal '\v<self>\.' conceal cchar=“
@@ -200,10 +200,10 @@ syntax keyword Comment fn conceal cchar=λ
 " syntax keyword Type str conceal cchar=𝐒
 " syntax match Normal '\v<String(::)?(new|from)?' conceal cchar=𝐒
 
-syntax keyword Type Fn FnOnce FnMut conceal cchar=λ
-syntax match Type '\v\&(str|String)' conceal cchar=𝐒
+" syntax keyword Type Fn FnOnce FnMut conceal cchar=λ
+" syntax match Type '\v\&(str|String)' conceal cchar=𝐒
 
-syntax match Type '\v\zsvec!\ze\[' conceal
+" syntax match Type '\v\zsvec!\ze\[' conceal
 
 " syntax keyword Type Option conceal cchar=?
 " syntax keyword Type Result conceal cchar=⁇
@@ -212,8 +212,8 @@ syntax match Type '\v\zsvec!\ze\[' conceal
 syntax match Type '\v<Vec>' conceal cchar=𝕍
 syntax match Type '\v<Vec::new' conceal cchar=𝕍
 
-syntax keyword Comment where conceal cchar=∵
-syntax keyword Comment let break if else continue
+" syntax keyword Comment where conceal cchar=∵
+" syntax keyword Comment let break if else continue
 
 " highlight! link rustBuiltin rustOperator
 " highlight! link rustOperator Operator
